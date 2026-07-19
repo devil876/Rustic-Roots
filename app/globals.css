@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  /* Himalayan hearth palette */
+  --color-cream: #f4ecdc;
+  --color-cream-deep: #ece0c9;
+  --color-parchment: #faf6ec;
+  --color-charcoal: #211d17;
+  --color-pine: #263127;
+  --color-pine-deep: #1a221c;
+  --color-rust: #b1502e;
+  --color-rust-deep: #8f3d21;
+  --color-deodar: #3f5a45;
+  --color-slate: #6b7d84;
+  --color-gold: #c98a2c;
+  --color-ink: #2c2620;
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-manrope);
+}
+
+@theme inline {
+  --color-cream: var(--color-cream);
+  --color-cream-deep: var(--color-cream-deep);
+  --color-parchment: var(--color-parchment);
+  --color-charcoal: var(--color-charcoal);
+  --color-pine: var(--color-pine);
+  --color-pine-deep: var(--color-pine-deep);
+  --color-rust: var(--color-rust);
+  --color-rust-deep: var(--color-rust-deep);
+  --color-deodar: var(--color-deodar);
+  --color-slate: var(--color-slate);
+  --color-gold: var(--color-gold);
+  --color-ink: var(--color-ink);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-parchment);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+/* Grain overlay for atmosphere */
+.grain {
+  position: relative;
+}
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-rust);
+  color: var(--color-parchment);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-deodar);
+  border-radius: 999px;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(14px) translateY(-10px); }
+}
+.animate-drift {
+  animation: drift 9s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
