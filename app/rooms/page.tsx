@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import MountainRidge from "@/components/MountainRidge";
 import { PrimaryButton, SectionHeading } from "@/components/UI";
 import { rooms } from "@/lib/data";
+import RoomGallery from "@/components/RoomGallery";
 
 export const metadata: Metadata = {
   title: "Rooms & Rates | Dhauladhar Basera, Shahpur",
@@ -38,12 +39,11 @@ export default function RoomsPage() {
                 i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
               }`}
             >
-              <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-xl">
-                <Image src={room.image} alt={room.name} fill className="object-cover" />
-                <div className="absolute top-5 left-5 bg-[var(--color-parchment)] px-4 py-2 rounded-full text-xs uppercase tracking-wide font-semibold text-[var(--color-charcoal)]">
-                  ₹{room.price.toLocaleString("en-IN")} / night
-                </div>
-              </div>
+              <RoomGallery
+  images={room.gallery}
+  roomName={room.name}
+  price={room.price}
+/>
               <div>
                 <p className="text-[var(--color-rust)] text-xs uppercase tracking-[0.25em] font-semibold mb-3">
                   {room.tagline}

@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "Dhauladhar Basera",
+  name: "Rustic Roots ",
   tagline: "A homestay on the pine slopes above Shahpur",
   phone: "+91 98765 43210",
   whatsapp: "919876543210",
@@ -35,13 +35,16 @@ export const rooms: Room[] = [
     occupancy: "2 adults + 1 child",
     bed: "King bed",
     view: "Full Dhauladhar range",
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1505692952047-1a78307da8f2?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&w=1600&q=80",
-    ],
-    amenities: ["Private balcony", "Mountain-facing king bed", "Attached bath with geyser", "Study nook", "Bukhari (wood stove) on request"],
+
+image: "/rooms/room1/Room1image1.webp",
+
+gallery: [
+  "/rooms/room1/Room1image1.webp",
+  "/rooms/room1/Room1image2.webp",
+  
+],
+
+amenities: ["Private balcony", "Mountain-facing king bed", "Attached bath with geyser", "Study nook", "Bukhari (wood stove) on request"],
   },
   {
     slug: "kangra-valley-room",
@@ -54,12 +57,12 @@ export const rooms: Room[] = [
     occupancy: "2 adults",
     bed: "Queen bed",
     view: "Tea gardens & valley",
-    image: "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&w=1600&q=80",
+    image: "/rooms/room2/Room2image1.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1616594039964-ae9021efa761?auto=format&fit=crop&w=1600&q=80",
-    ],
+  "/rooms/room2/Room2image1.webp",
+  "/rooms/room2/Room2image2.webp",
+  
+],
     amenities: ["Direct garden access", "Sit-out with cane chairs", "Attached bath", "Reading lamp", "Extra mattress on request"],
   },
   {
@@ -73,12 +76,12 @@ export const rooms: Room[] = [
     occupancy: "2 adults",
     bed: "Queen bed",
     view: "Pine forest",
-    image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=1600&q=80",
+    image: "/rooms/room3/Room3image1.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1600&q=80",
-    ],
+  "/rooms/room3/Room3image1.webp",
+  "/rooms/room3/Room3image2.webp",
+  
+],
     amenities: ["Wood-panelled interiors", "Window seat", "Attached bath with hot water", "Extra quilts for winter", "Reading corner"],
   },
   {
@@ -92,12 +95,12 @@ export const rooms: Room[] = [
     occupancy: "1–2 adults",
     bed: "Double bed",
     view: "Sky & rooftops",
-    image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80",
+    image: "/rooms/room4/Room4image1.webp",
     gallery: [
-      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80",
-      "https://images.unsplash.com/photo-1522156373667-4c7234bbd804?auto=format&fit=crop&w=1600&q=80",
-    ],
+  "/rooms/room4/Room4image1.webp",
+  "/rooms/room4/Room4image2.webp",
+  
+],
     amenities: ["Skylight window", "Compact work desk", "Shared bath (private during stay)", "Reading lamp", "Best sunset light in the house"],
   },
 ];
@@ -115,12 +118,14 @@ export const experiences = [
       "A ten-minute walk drops you into the Shahpur tea estates. We arrange an early walk timed to the mist lifting off the bushes.",
     image: "https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?auto=format&fit=crop&w=1400&q=80",
   },
+
   {
-    title: "Bonfire Evenings",
+    title: "Kareri Lake & Dhauladhar Treks",
     description:
-      "Star-clear Kangra nights, a bonfire in the courtyard, and stories — ours or yours — over roasted corn and local chai.",
-    image: "https://images.unsplash.com/photo-1475855664986-8a1cec3f5b40?auto=format&fit=crop&w=1400&q=80",
+      "For the more adventurous, we help plan multi-day treks toward Kareri Lake and the Dhauladhar base camps, with local guides we've known for years.",
+    image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1400&q=80",
   },
+
   {
     title: "Village Walks & Farm Visits",
     description:
@@ -133,12 +138,7 @@ export const experiences = [
       "We arrange a driver for the loop to the rock-cut Masroor temples and the ridgetop Kangra Fort — best done as a single unhurried day.",
     image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1400&q=80",
   },
-  {
-    title: "Kareri Lake & Dhauladhar Treks",
-    description:
-      "For the more adventurous, we help plan multi-day treks toward Kareri Lake and the Dhauladhar base camps, with local guides we've known for years.",
-    image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1400&q=80",
-  },
+  
 ];
 
 export const attractions = [

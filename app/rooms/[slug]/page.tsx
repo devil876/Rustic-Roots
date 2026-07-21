@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PrimaryButton, SectionHeading } from "@/components/UI";
 import { rooms } from "@/lib/data";
+import RoomGallery from "@/components/RoomGallery";
 
 export function generateStaticParams() {
   return rooms.map((room) => ({ slug: room.slug }));
@@ -37,24 +38,40 @@ export default async function RoomDetailPage({
   return (
     <main className="overflow-x-hidden">
       {/* HERO IMAGE */}
-      <section className="relative h-[70vh] min-h-[420px] w-full">
-        <Image src={room.image} alt={room.name} fill priority className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/40" />
-        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-10 flex flex-col justify-end pb-16">
-          <Link
-            href="/rooms"
-            className="text-white/70 hover:text-white text-xs uppercase tracking-widest mb-5 inline-flex items-center gap-2 w-fit"
-          >
-            ← Back to all rooms
-          </Link>
-          <p className="text-[var(--color-gold)] text-xs uppercase tracking-[0.25em] font-semibold mb-3">
-            {room.tagline}
-          </p>
-          <h1 className="font-[family-name:var(--font-display)] text-white text-5xl md:text-7xl leading-[0.98]">
-            {room.name}
-          </h1>
-        </div>
-      </section>
+      <section className="bg-[var(--color-pine)] pt-40 pb-20">
+  <div className="max-w-7xl mx-auto px-6 md:px-10 lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+
+    {/* LEFT */}
+    <div className="mb-12 lg:mb-0">
+
+      <Link
+        href="/rooms"
+        className="text-white/70 hover:text-white text-xs uppercase tracking-widest inline-flex items-center gap-2 mb-6"
+      >
+        ← Back to all rooms
+      </Link>
+
+      <p className="text-[var(--color-gold)] text-xs uppercase tracking-[0.25em] font-semibold mb-3">
+        {room.tagline}
+      </p>
+
+      <h1 className="font-[family-name:var(--font-display)] text-white text-5xl md:text-7xl leading-[0.95]">
+        {room.name}
+      </h1>
+
+    </div>
+
+    {/* RIGHT */}
+    <div>
+      <RoomGallery
+        images={room.gallery}
+        roomName={room.name}
+        price={room.price}
+      />
+    </div>
+
+  </div>
+</section>
 
       {/* DETAILS */}
       <section className="bg-[var(--color-parchment)] py-16 md:py-24">
@@ -95,13 +112,7 @@ export default async function RoomDetailPage({
               </ul>
             </div>
 
-            <div className="mt-10 grid grid-cols-3 gap-4">
-              {room.gallery.map((src, i) => (
-                <div key={i} className="relative aspect-square rounded-xl overflow-hidden">
-                  <Image src={src} alt={`${room.name} view ${i + 1}`} fill className="object-cover" />
-                </div>
-              ))}
-            </div>
+            
           </div>
 
           {/* BOOKING CARD */}

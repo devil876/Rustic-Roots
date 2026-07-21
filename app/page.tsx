@@ -3,23 +3,19 @@ import Link from "next/link";
 import MountainRidge from "@/components/MountainRidge";
 import { PrimaryButton, SectionHeading, StatChip } from "@/components/UI";
 import { experiences, rooms, testimonials } from "@/lib/data";
+import HeroSlideshow from "@/components/HeroSlideshow";
 
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
       {/* HERO */}
-      <section className="relative h-[100svh] min-h-[640px] w-full">
-        <Image
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80"
-          alt="Dhauladhar mountain range above Shahpur, Kangra at sunrise"
-          fill
-          priority
-          className="object-cover"
-        />
+      <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
+       <HeroSlideshow />
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/50" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
 
-        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 md:px-10 flex flex-col justify-end pb-28 md:pb-32">
+        <div className="relative z-10 h-[calc(100%-120px)] max-w-7xl mx-auto px-6 md:px-10 flex items-center">
+  <div className="pt-[18vh] md:pt-[20vh] lg:pt-[24vh] xl:pt-[26vh]">
           <p className="animate-fade-up text-white/80 uppercase tracking-[0.3em] text-xs md:text-sm font-medium mb-5">
             Shahpur · Kangra · Himachal Pradesh
           </p>
@@ -41,55 +37,17 @@ export default function Home() {
             <PrimaryButton href="/contact" variant="light">Check Availability</PrimaryButton>
           </div>
         </div>
+        </div>
 
-        <div className="absolute bottom-0 left-0 right-0 z-10">
+        <div className="absolute bottom-0 left-0 right-0 z-20">
           <MountainRidge fill="var(--color-parchment)" />
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="bg-[var(--color-parchment)] pt-2 pb-24 md:pb-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-14 items-center">
-          <div className="animate-fade-up">
-            <SectionHeading
-              eyebrow="Welcome"
-              title="Not a hotel. Just our home, with a spare room and a full table."
-              description="Dhauladhar Basera began as our own family house on the edge of Shahpur town — three generations, a kitchen garden, and a view we couldn't keep to ourselves. Today we host travellers in four rooms built around that same house, still cooking on the same wood-fired chulha, still watching the same ridge line change colour every evening."
-            />
-            <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
-              <StatChip value="4" label="Rooms only" />
-              <StatChip value="14 yrs" label="Hosting guests" />
-              <StatChip value="6,200 ft" label="Above sea level" />
-            </div>
-            <div className="mt-10">
-              <PrimaryButton href="/about" variant="outline">Read Our Story</PrimaryButton>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
-              <Image
-                src="https://images.unsplash.com/photo-1602088113235-229c19758b0f?auto=format&fit=crop&w=1200&q=80"
-                alt="The homestay courtyard and garden in Shahpur"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="hidden sm:block absolute -bottom-8 -left-8 w-44 h-44 rounded-2xl overflow-hidden shadow-xl border-4 border-[var(--color-parchment)]">
-              <Image
-                src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=600&q=80"
-                alt="Home-cooked Pahadi meal"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ROOMS PREVIEW */}
-      <section className="bg-[var(--color-cream)] py-24 md:py-32">
+      <section className="bg-[var(--color-parchment)] py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-14">
             <SectionHeading
               eyebrow="Where you'll sleep"
               title="Four rooms, each facing the mountain differently"
@@ -187,6 +145,263 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* CAFÉ RUSTIC */}
+<section className="bg-[var(--color-parchment)] pt-8 pb-24 md:pt-10 md:pb-32">
+  <div className="max-w-7xl mx-auto px-6 md:px-10">
+
+    <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
+
+      {/* Content */}
+
+      <div className="animate-fade-up">
+
+        <SectionHeading
+          eyebrow="Café Rustic"
+          title="Homemade food with mountain views"
+          description="Whether you're beginning your day with a hearty breakfast or winding down over coffee at sunset, Café Rustic brings together comforting food, local flavours, and panoramic views of the Dhauladhar mountains."
+        />
+
+        <div className="grid sm:grid-cols-2 gap-4 mt-10">
+
+          <div className="bg-white rounded-2xl border border-[var(--color-cream-deep)] p-5">
+            <h4 className="font-semibold mb-2">
+              🍳 Fresh Breakfast
+            </h4>
+
+            <p className="text-sm text-[var(--color-ink)]/70">
+              Start your morning with freshly prepared breakfasts and mountain air.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-[var(--color-cream-deep)] p-5">
+            <h4 className="font-semibold mb-2">
+              🍲 Local Flavours
+            </h4>
+
+            <p className="text-sm text-[var(--color-ink)]/70">
+              Enjoy homemade Himachali dishes and comforting family recipes.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-[var(--color-cream-deep)] p-5">
+            <h4 className="font-semibold mb-2">
+              ☕ Coffee & Snacks
+            </h4>
+
+            <p className="text-sm text-[var(--color-ink)]/70">
+              Relax with coffee, tea, and freshly prepared evening snacks.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-[var(--color-cream-deep)] p-5">
+            <h4 className="font-semibold mb-2">
+              🌄 Scenic Dining
+            </h4>
+
+            <p className="text-sm text-[var(--color-ink)]/70">
+              Indoor and outdoor seating overlooking the Dhauladhar mountains.
+            </p>
+          </div>
+
+        </div>
+
+        <div className="mt-10 flex gap-4 flex-wrap">
+
+
+        </div>
+
+      </div>
+
+      {/* Image */}
+
+      <div
+        className="relative animate-fade-up"
+        style={{ animationDelay: ".15s" }}
+      >
+
+        <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+
+          <Image
+            src="/cafe/cafe.webp"
+            alt="Café Rustic"
+            fill
+            className="object-cover"
+          />
+
+        </div>
+
+        {/* Floating Card */}
+
+        <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl border border-[var(--color-cream-deep)] px-6 py-5">
+
+          <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-rust)]">
+            Open Daily
+          </p>
+
+          <p className="mt-1 text-2xl font-[family-name:var(--font-display)]">
+            8 AM – 10 PM
+          </p>
+
+          <p className="text-sm text-[var(--color-ink)]/70">
+            Breakfast • Lunch • Dinner
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+      {/* MEET YOUR HOST */}
+<section className="bg-[var(--color-parchment)] pt-0 pb-8 md:pb-10">
+  <div className="max-w-7xl mx-auto px-6 md:px-10">
+
+    <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-7 items-center">
+
+      {/* Image */}
+      <div className="relative animate-fade-up">
+
+        <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl">
+
+          <Image
+            src="/host/host.webp"
+            alt="Host of Dhauladhar Basera"
+            fill
+            className="object-cover"
+          />
+
+        </div>
+
+        {/* Floating Card */}
+
+        <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl border border-[var(--color-cream-deep)] px-6 py-5">
+
+          <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-rust)]">
+            Guests Hosted
+          </p>
+
+          <p className="mt-1 text-3xl font-[family-name:var(--font-display)]">
+            14+
+          </p>
+
+          <p className="text-sm text-[var(--color-ink)]/70">
+            Years welcoming guests
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* Content */}
+
+      <div className="animate-fade-up" style={{ animationDelay: ".15s" }}>
+
+        <SectionHeading
+          eyebrow="Meet Your Host"
+          title="The person behind Rustic Roots"
+          description=" Hi, I'm Purvansh Sharma, a local from Kangra valley who opened this stay to travellers looking for a slower way to experience Himachal. Every guest is welcomed with genuine hospitality, meals, local stories, and recommendations that only someone who has lived here their whole life can offer."
+        />
+
+        {/* Features */}
+
+        <div className="grid sm:grid-cols-2 gap-4 mt-10">
+
+          <div className="bg-white rounded-2xl border border-[var(--color-cream-deep)] p-5">
+            <h4 className="font-semibold mb-2">🏡 Family-run</h4>
+            <p className="text-sm text-[var(--color-ink)]/70">
+              Warm hospitality that feels like staying with friends.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-[var(--color-cream-deep)] p-5">
+            <h4 className="font-semibold mb-2">🍲 Homemade Meals</h4>
+            <p className="text-sm text-[var(--color-ink)]/70">
+              Fresh Pahadi food prepared in our kitchen.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-[var(--color-cream-deep)] p-5">
+            <h4 className="font-semibold mb-2">🥾 Local Guidance</h4>
+            <p className="text-sm text-[var(--color-ink)]/70">
+              Hidden viewpoints, village walks and trekking advice.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-[var(--color-cream-deep)] p-5">
+            <h4 className="font-semibold mb-2">☕ Slow Mornings</h4>
+            <p className="text-sm text-[var(--color-ink)]/70">
+              Tea, mountain air and conversations you'll remember.
+            </p>
+          </div>
+
+        </div>
+
+        <div className="mt-10">
+
+    
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{/* LOCATION */}
+<section className="bg-[var(--color-cream)] pt-8 pb-24 md:pt-12 md:pb-32">
+  <div className="max-w-7xl mx-auto px-6 md:px-10">
+
+    <SectionHeading
+      eyebrow="Find Us"
+      title="Easy to reach, impossible to forget"
+      description="Nestled in the peaceful hills of Shahpur, Dhauladhar Basera offers mountain views while remaining conveniently connected to Dharamshala and Kangra."
+      align="center"
+    />
+
+    <div className="mt-14 overflow-hidden rounded-[2rem] shadow-xl border border-[var(--color-cream-deep)]">
+
+      <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4586.905014835202!2d76.15953675197734!3d32.22540345024845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b5f000fb56067%3A0x6cdf2e85ebcd9ad!2sRustic%20Roots%20stay!5e1!3m2!1sen!2sin!4v1784532468683!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-c"
+  width="100%"
+  height="500"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  className="w-full"
+/>
+
+    </div>
+
+    <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+
+      <div>
+        <p className="font-semibold text-lg">
+          📍 Shahpur, Kangra, Himachal Pradesh
+        </p>
+
+        <p className="text-[var(--color-ink)]/70 mt-2">
+          Approx. 35 minutes from Dharamshala • 25 minutes from Kangra Airport
+        </p>
+      </div>
+
+      <PrimaryButton
+        href="https://maps.app.goo.gl/3bvgAVzHA47Gxxu4A"
+        target="_blank"
+      >
+        Get Directions
+      </PrimaryButton>
+
+    </div>
+
+  </div>
+</section>
 
       {/* CTA */}
       <section className="relative py-28 md:py-36 overflow-hidden">

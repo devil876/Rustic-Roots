@@ -4,7 +4,7 @@ type Props = {
   flip?: boolean;
 };
 
-export default function MountainRidge({ className = "", fill = "var(--color-parchment)", flip = false }: Props) {
+export default function MountainRidge({ className = "", fill = "var(--color-cream)", flip = false }: Props) {
   return (
     <div className={`w-full leading-none ${flip ? "rotate-180" : ""} ${className}`} aria-hidden="true">
       <svg

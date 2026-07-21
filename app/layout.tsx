@@ -20,7 +20,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Dhauladhar Basera | A Homestay in Shahpur, Kangra",
+  title: "Rustic Roots | A Homestay in laps of Dhauladhar",
   description:
     "A four-room family homestay tucked into the pine slopes above Shahpur, Kangra — Dhauladhar views, home-cooked Pahadi meals, and slow mountain mornings.",
   keywords: [
