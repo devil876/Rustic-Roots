@@ -3,6 +3,7 @@ import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton"; // 1. IMPORT THE COMPONENT HERE
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <WhatsAppButton /> {/* 2. RENDER THE COMPONENT HERE */}
       </body>
     </html>
   );

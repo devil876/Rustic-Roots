@@ -113,11 +113,12 @@ export const experiences = [
     image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1400&q=80",
   },
   {
-    title: "Tea Garden Walks",
+    title: "Day Trip: Masroor & Kangra Fort",
     description:
-      "A ten-minute walk drops you into the Shahpur tea estates. We arrange an early walk timed to the mist lifting off the bushes.",
-    image: "https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?auto=format&fit=crop&w=1400&q=80",
+      "We arrange a driver for the loop to the rock-cut Masroor temples and the ridgetop Kangra Fort — best done as a single unhurried day.",
+    image: "/experiences/kangrafort.webp",
   },
+  
 
   {
     title: "Kareri Lake & Dhauladhar Treks",
@@ -133,10 +134,10 @@ export const experiences = [
     image: "https://images.unsplash.com/photo-1602088113235-229c19758b0f?auto=format&fit=crop&w=1400&q=80",
   },
   {
-    title: "Day Trip: Masroor & Kangra Fort",
+    title: "Tea Garden Walks",
     description:
-      "We arrange a driver for the loop to the rock-cut Masroor temples and the ridgetop Kangra Fort — best done as a single unhurried day.",
-    image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1400&q=80",
+      "Make visit to the Dharamashala's tea estates. We arrange an early walk timed to the mist lifting off the bushes.",
+    image: "https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?auto=format&fit=crop&w=1400&q=80",
   },
   
 ];

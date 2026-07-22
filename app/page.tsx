@@ -4,6 +4,7 @@ import MountainRidge from "@/components/MountainRidge";
 import { PrimaryButton, SectionHeading, StatChip } from "@/components/UI";
 import { experiences, rooms, testimonials } from "@/lib/data";
 import HeroSlideshow from "@/components/HeroSlideshow";
+import BookingBar from "@/components/BookingBar";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
             Shahpur · Kangra · Himachal Pradesh
           </p>
           <h1
-            className="animate-fade-up font-[family-name:var(--font-display)] text-white text-5xl sm:text-6xl md:text-7xl leading-[0.98] max-w-4xl text-balance"
+            className="animate-fade-up font-[family-name:var(--font-display)] text-white text-5xl sm:text-6xl md:text-6xl leading-[0.98] max-w-4xl text-balance"
             style={{ animationDelay: "0.1s" }}
           >
             A home in the shadow of the <span className="italic text-[var(--color-gold)]">Dhauladhars</span>
@@ -33,8 +34,8 @@ export default function Home() {
             a slow-travel homestay on the pine slopes above Shahpur.
           </p>
           <div className="animate-fade-up flex flex-wrap gap-4 mt-9" style={{ animationDelay: "0.34s" }}>
-            <PrimaryButton href="/rooms">View Rooms &amp; Rates</PrimaryButton>
-            <PrimaryButton href="/contact" variant="light">Check Availability</PrimaryButton>
+            <PrimaryButton href="/rooms">Enquire Now</PrimaryButton>
+            <PrimaryButton href="/contact" variant="light">Contact Us</PrimaryButton>
           </div>
         </div>
         </div>
@@ -42,7 +43,13 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 z-20">
           <MountainRidge fill="var(--color-parchment)" />
         </div>
-      </section>
+      </section>a
+      
+      <section className="relative -mt-20 z-30">
+    <div className="max-w-7xl mx-auto px-6">
+        <BookingBar />
+    </div>
+</section>
 
       {/* ROOMS PREVIEW */}
       <section className="bg-[var(--color-parchment)] py-20 md:py-32">
@@ -358,47 +365,42 @@ export default function Home() {
   <div className="max-w-7xl mx-auto px-6 md:px-10">
 
     <SectionHeading
-      eyebrow="Find Us"
-      title="Easy to reach, impossible to forget"
-      description="Nestled in the peaceful hills of Shahpur, Dhauladhar Basera offers mountain views while remaining conveniently connected to Dharamshala and Kangra."
-      align="center"
-    />
-
-    <div className="mt-14 overflow-hidden rounded-[2rem] shadow-xl border border-[var(--color-cream-deep)]">
-
-      <iframe
-  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5264.98227867392!2d76.1595368!3d32.2254035!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b5f000fb56067%3A0x6cdf2e85ebcd9ad!2sRustic%20Roots%20stay!5e1!3m2!1sen!2sin!4v1784700972235!5m2!1sen!2sin"
-  width="100%"
-  height="450"
-  style={{ border: 0 }}
-  allowFullScreen
-  loading="lazy"
-  referrerPolicy="strict-origin-when-cross-origin"
-  className="w-full h-full"
+  eyebrow="Find Us"
+  title="Easy to reach, impossible to forget"
+  description="Nestled in the peaceful hills of Shahpur, Dhauladhar Basera offers mountain views while remaining conveniently connected to Dharamshala and Kangra."
+  align="center"
 />
 
-    </div>
+<div className="mt-14 overflow-hidden rounded-[2rem] shadow-xl border border-[var(--color-cream-deep)]">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5264.98227867392!2d76.1595368!3d32.2254035!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b5f000fb56067%3A0x6cdf2e85ebcd9ad!2sRustic%20Roots%20stay!5e1!3m2!1sen!2sin!4v1784700972235!5m2!1sen!2sin"
+    width="100%"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="strict-origin-when-cross-origin"
+    /* 👇 CHANGED h-full to h-[400px] (or you can use h-[500px] for even taller) */
+    className="w-full h-[400px] md:h-[500px]" 
+  />
+</div>
 
-    <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+  <div>
+    <p className="font-semibold text-lg">
+      📍 Shahpur, Kangra, Himachal Pradesh
+    </p>
+    <p className="text-[var(--color-ink)]/70 mt-2">
+      Approx. 35 minutes from Dharamshala • 25 minutes from Kangra Airport
+    </p>
+  </div>
 
-      <div>
-        <p className="font-semibold text-lg">
-          📍 Shahpur, Kangra, Himachal Pradesh
-        </p>
-
-        <p className="text-[var(--color-ink)]/70 mt-2">
-          Approx. 35 minutes from Dharamshala • 25 minutes from Kangra Airport
-        </p>
-      </div>
-
-      <PrimaryButton
-        href="https://maps.app.goo.gl/3bvgAVzHA47Gxxu4A"
-        target="_blank"
-      >
-        Get Directions
-      </PrimaryButton>
-
-    </div>
+  <PrimaryButton
+    href="https://maps.app.goo.gl/3bvgAVzHA47Gxxu4A"
+    target="_blank"
+  >
+    Get Directions
+  </PrimaryButton>
+</div>
 
   </div>
 </section>
