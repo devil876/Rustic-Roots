@@ -50,11 +50,12 @@ export function PrimaryButton({
   href,
   children,
   variant = "solid",
+  ...props
 }: {
   href: string;
   children: ReactNode;
   variant?: "solid" | "outline" | "light";
-}) {
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const styles = {
     solid:
       "bg-[var(--color-rust)] text-white hover:bg-[var(--color-rust-deep)]",
@@ -63,14 +64,22 @@ export function PrimaryButton({
     light:
       "bg-white text-[var(--color-charcoal)] hover:bg-[var(--color-cream)]",
   };
+
   return (
     <Link
       href={href}
+      {...props}
       className={`inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-sm font-semibold uppercase tracking-wide transition-all duration-300 ${styles[variant]}`}
     >
       {children}
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+          d="M3 8h10M9 4l4 4-4 4"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     </Link>
   );
