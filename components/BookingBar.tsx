@@ -40,7 +40,10 @@ Please let me know if these dates are available.`;
     );
   };
 
-  const updateCount = (type, operation) => {
+  const updateCount = (
+  type: "adults" | "children" | "rooms",
+  operation: "+" | "-"
+) => {
     if (type === "adults") {
       setAdults((prev) => (operation === "+" ? prev + 1 : Math.max(1, prev - 1)));
     }
