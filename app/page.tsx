@@ -367,13 +367,14 @@ export default function Home() {
     <div className="mt-14 overflow-hidden rounded-[2rem] shadow-xl border border-[var(--color-cream-deep)]">
 
       <iframe
-  src="..."
-  width="600"
+  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5264.98227867392!2d76.1595368!3d32.2254035!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391b5f000fb56067%3A0x6cdf2e85ebcd9ad!2sRustic%20Roots%20stay!5e1!3m2!1sen!2sin!4v1784700972235!5m2!1sen!2sin"
+  width="100%"
   height="450"
   style={{ border: 0 }}
   allowFullScreen
   loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
+  referrerPolicy="strict-origin-when-cross-origin"
+  className="w-full h-full"
 />
 
     </div>
