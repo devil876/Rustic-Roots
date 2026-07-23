@@ -1,16 +1,30 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Fragment } from "react";
 
-const heroImages = [
-  "/hero/hero1.webp",
-  "/hero/hero2.webp",
+const heroSlides = [
+  {
+    desktop: "/hero/hero1.webp",
+    mobile: "/hero/hero1-mobile.webp",
+  },
+  {
+    desktop: "/hero/hero2.webp",
+    mobile: "/hero/hero2-mobile.webp",
+  },
 ];
 
-export default function HeroSlideshow() {
+// Added onSlideChange prop here
+export default function HeroSlideshow({ onSlideChange }) {
   const [currentImage, setCurrentImage] = useState(0);
   const [progress, setProgress] = useState(0);
+
+  // NEW: Tells the parent component which slide is currently active
+  useEffect(() => {
+    if (onSlideChange) {
+      onSlideChange(currentImage);
+    }
+  }, [currentImage, onSlideChange]);
 
   useEffect(() => {
     setProgress(0);
@@ -23,7 +37,7 @@ export default function HeroSlideshow() {
     }, 120);
 
     const imageInterval = setTimeout(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+      setCurrentImage((prev) => (prev + 1) % heroSlides.length);
     }, 6000);
 
     return () => {
@@ -36,29 +50,43 @@ export default function HeroSlideshow() {
   const circumference = 2 * Math.PI * radius;
 
   return (
-    <>
+    /* 
+      MOBILE: relative height (50vh) so it stacks on top of your content.
+      DESKTOP: absolute inset-0 so it acts as a background behind your content.
+    */
+    <div className="relative w-full h-[50vh] md:absolute md:inset-0 md:h-full md:-z-10">
+      
       <div className="absolute inset-0 overflow-hidden">
-  {heroImages.map((image, index) => (
-    <Image
-      key={image}
-      src={image}
-      alt={`Hero ${index + 1}`}
-      fill
-      priority
-      className={`object-cover transition-all duration-[2000ms] ease-in-out ${
-        index === currentImage
-          ? "opacity-100 scale-105"
-          : "opacity-0 scale-100"
-      }`}
-    />
-  ))}
-</div>
+        {heroSlides.map((slide, index) => {
+          const isActive = index === currentImage;
+          const baseClasses = `object-cover transition-all duration-[2000ms] ease-in-out ${
+            isActive ? "opacity-100 scale-105" : "opacity-0 scale-100"
+          }`;
 
-      <div className="absolute left-1/2 -translate-x-1/2 z-50 flex gap-4
-                bottom-12
-                md:bottom-16
-                lg:bottom-27">
-        {heroImages.map((_, index) => (
+          return (
+            <Fragment key={index}>
+              <Image
+                src={slide.desktop}
+                alt={`Hero Desktop ${index + 1}`}
+                fill
+                priority
+                className={`hidden md:block ${baseClasses}`}
+              />
+              <Image
+                src={slide.mobile}
+                alt={`Hero Mobile ${index + 1}`}
+                fill
+                priority
+                className={`block md:hidden ${baseClasses}`}
+              />
+            </Fragment>
+          );
+        })}
+      </div>
+
+      {/* Progress Indicators - Positioned at the bottom of the image on mobile */}
+      <div className="absolute left-1/2 -translate-x-1/2 z-20 flex gap-4 bottom-6 md:bottom-16 lg:bottom-27">
+        {heroSlides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentImage(index)}
@@ -77,7 +105,6 @@ export default function HeroSlideshow() {
                   strokeWidth="2"
                   fill="none"
                 />
-
                 <circle
                   cx="12"
                   cy="12"
@@ -104,6 +131,6 @@ export default function HeroSlideshow() {
           </button>
         ))}
       </div>
-    </>
+    </div>
   );
 }

@@ -204,7 +204,7 @@ Please let me know if these dates are available.`;
           onClick={sendWhatsapp}
           className="w-full h-full min-h-[48px] bg-[#546553] text-white font-medium text-sm md:text-base hover:bg-[#435242] transition px-6 py-3 rounded-sm shadow-sm"
         >
-          Check Availability
+          RESERVE YOUR STAY
         </button>
       </div>
     </div>
