@@ -14,8 +14,14 @@ const heroSlides = [
   },
 ];
 
+
+interface HeroSlideshowProps {
+  onSlideChange?: (index: number) => void;
+}
 // Added onSlideChange prop here
-export default function HeroSlideshow({ onSlideChange }) {
+export default function HeroSlideshow({
+  onSlideChange,
+}: HeroSlideshowProps) {
   const [currentImage, setCurrentImage] = useState(0);
   const [progress, setProgress] = useState(0);
 

@@ -45,7 +45,7 @@ export default function Home() {
       {/* HERO SECTION UPDATED */}
       <section className="relative w-full overflow-hidden flex flex-col min-h-[100svh] md:block md:h-[100svh] md:min-h-[640px]">
         
-        <HeroSlideshow onSlideChange={(index) => setActiveSlide(index)} />
+        <HeroSlideshow onSlideChange={(index: number) => setActiveSlide(index)} />
         
         <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/50" />
         <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
